@@ -1,0 +1,24 @@
+.perlcriticrc
+Build.PL
+Changes
+ignore.txt
+lib/Git/Repository/Plugin/Blame.pm
+lib/Git/Repository/Plugin/Blame/Line.pm
+Makefile.PL
+MANIFEST			This list of files
+MANIFEST.SKIP
+META.yml
+README
+t/00-load.t
+t/10-blame.t
+t/Line/00-load.t
+t/Line/10-new.t
+t/Line/20-get_commit_attributes.t
+t/Line/30-get_commit_id.t
+t/Line/40-get_line.t
+t/Line/50-get_line_number.t
+t/manifest.t
+t/module_versions.t
+t/perlcritic.t
+t/pod.t
+t/pod-coverage.t
