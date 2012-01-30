@@ -15,7 +15,7 @@ use Git::Repository::Plugin::Blame::Line;
 
 =head1 NAME
  
-Git::Repository::Plugin::Blame - Add a blame() method to Git::Repository.
+Git::Repository::Plugin::Blame - Add a blame() method to L<Git::Repository>.
 
 
 =head1 VERSION
@@ -40,8 +40,8 @@ our $VERSION = '1.0.0';
 
 =head1 DESCRIPTION
 
-This module adds a new blame() method to C<Git::Repository>, which can be used
-to determine what the last change for each line in a file is.
+This module adds a new C<blame()> method to L<Git::Repository>, which can be
+used to determine what the last change for each line in a file is.
 
 
 =head1 METHODS
@@ -49,7 +49,7 @@ to determine what the last change for each line in a file is.
 =head2 blame()
 
 Return the git blame information for a given file as an arrayref of
-C<Git::Repository::Plugin::Blame::Line> objects.
+L<Git::Repository::Plugin::Blame::Line> objects.
 
 	my $blame_lines = $repository->blame( $file );
 
