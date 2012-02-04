@@ -12,7 +12,7 @@ my $builder = Module::Build->new(
 	{
 		'Data::Dumper'            => 0,
 		'Carp'                    => 0,
-		'Git::Repository::Plugin' => 1.20,
+		'Git::Repository'         => 1.20,
 		'Perl6::Slurp'            => 0,
 		'Test::Deep'              => 0,
 		'Test::Exception'         => 0,

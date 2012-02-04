@@ -8,7 +8,7 @@ WriteMakefile
           'PREREQ_PM' => {
                            'Carp' => 0,
                            'Data::Dumper' => 0,
-                           'Git::Repository::Plugin' => 0,
+                           'Git::Repository' => '1.2',
                            'Perl6::Slurp' => 0,
                            'Test::Deep' => 0,
                            'Test::Exception' => 0,
