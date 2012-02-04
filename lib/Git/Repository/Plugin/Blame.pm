@@ -61,19 +61,13 @@ sub blame
 	
 	# Run the command.
 	my $command = $repository->command( 'blame', '--porcelain', $file );
+	my @output = $command->final_output();
 	
-	# Make sure it didn't throw any errors.
-	my $errors = Perl6::Slurp::slurp( $command->stderr() );
-	croak "Could not retrieve output from git blame: $errors"
-		if defined( $errors ) && ( $errors ne '' );
-	
-	# Read the output.
-	my $output = Perl6::Slurp::slurp( $command->stdout() );
-	
+	# Parse the output.
 	my ( $commit_id, $original_line_number, $final_line_number, $lines_count_in_group );
 	my $commit_attributes = {};
 	my $lines = [];
-	foreach my $line ( split( /\n/x, $output ) )
+	foreach my $line ( @output )
 	{
 		if ( $line =~ /^\t(.*)$/x )
 		{
