@@ -1,5 +1,5 @@
 ---
-abstract: 'Add a blame() method to Git::Repository.'
+abstract: 'Add a blame() method to L<Git::Repository>.'
 author:
   - 'Guillaume Aubert <aubertg@cpan.org>'
 build_requires:
@@ -22,12 +22,12 @@ name: Git-Repository-Plugin-Blame
 provides:
   Git::Repository::Plugin::Blame:
     file: lib/Git/Repository/Plugin/Blame.pm
-    version: v1.0.0
+    version: v1.0.1
   Git::Repository::Plugin::Blame::Line:
     file: lib/Git/Repository/Plugin/Blame/Line.pm
-    version: v1.0.0
+    version: v1.0.1
 requires:
   perl: 5.006
 resources:
   license: http://opensource.org/licenses/artistic-license.php
-version: v1.0.0
+version: v1.0.1

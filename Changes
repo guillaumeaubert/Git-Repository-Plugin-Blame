@@ -1,4 +1,8 @@
 Revision history for Git-Repository-Plugin-Blame.
 
+1.0.1   02/04/2012
+        Fixed problem when git blame output was too large and caused the module
+        to hang.
+
 1.0.0   01/29/2012
         First public version.
