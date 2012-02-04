@@ -1,5 +1,9 @@
 Revision history for Git-Repository-Plugin-Blame.
 
+1.0.2   02/04/2012
+        Updated dependencies to require Git::Repository v1.20, to support
+        changes introduced in v1.0.1.
+
 1.0.1   02/04/2012
         Fixed problem when git blame output was too large and caused the module
         to hang.
