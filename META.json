@@ -1,0 +1,57 @@
+{
+   "abstract" : "Add a blame() method to L<Git::Repository>.",
+   "author" : [
+      "Guillaume Aubert <aubertg@cpan.org>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4, CPAN::Meta::Converter version 2.120530",
+   "license" : [
+      "artistic_1"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Git-Repository-Plugin-Blame",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Carp" : "0",
+            "Data::Dumper" : "0",
+            "Git::Repository" : "1.2",
+            "Perl6::Slurp" : "0",
+            "Test::Deep" : "0",
+            "Test::Exception" : "0",
+            "Test::Git" : "0",
+            "Test::More" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.4"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "perl" : "5.006"
+         }
+      }
+   },
+   "provides" : {
+      "Git::Repository::Plugin::Blame" : {
+         "file" : "lib/Git/Repository/Plugin/Blame.pm",
+         "version" : "v1.0.2"
+      },
+      "Git::Repository::Plugin::Blame::Line" : {
+         "file" : "lib/Git/Repository/Plugin/Blame/Line.pm",
+         "version" : "v1.0.2"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://opensource.org/licenses/artistic-license.php"
+      ]
+   },
+   "version" : "v1.0.2"
+}
