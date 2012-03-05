@@ -12,7 +12,7 @@ build_requires:
   Test::Git: 0
   Test::More: 0
 configure_requires:
-  Module::Build: 0.4
+  Module::Build: 0
 dynamic_config: 1
 generated_by: 'Module::Build version 0.4, CPAN::Meta::Converter version 2.120530'
 license: artistic
@@ -30,5 +30,8 @@ provides:
 requires:
   perl: 5.006
 resources:
+  bugtracker: https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame/issues
+  homepage: https://metacpan.org/release/Git-Repository-Plugin-Blame
   license: http://opensource.org/licenses/artistic-license.php
+  repository: https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame
 version: v1.0.2

@@ -29,6 +29,19 @@ my $builder = Module::Build->new(
 	],
 	create_makefile_pl   => 'traditional',
 	recursive_test_files => 1,
+	configure_requires   =>
+	{
+		'Module::Build'           => 0,
+	},
+	meta_merge           =>
+	{
+		resources                 =>
+		{
+			repository  => 'https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame',
+			homepage    => 'https://metacpan.org/release/Git-Repository-Plugin-Blame',
+			bugtracker  => 'https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame/issues',
+		},
+	},
 );
 
 $builder->create_build_script();
