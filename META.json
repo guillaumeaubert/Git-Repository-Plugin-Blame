@@ -40,11 +40,11 @@
    "provides" : {
       "Git::Repository::Plugin::Blame" : {
          "file" : "lib/Git/Repository/Plugin/Blame.pm",
-         "version" : "v1.0.2"
+         "version" : "v1.0.3"
       },
       "Git::Repository::Plugin::Blame::Line" : {
          "file" : "lib/Git/Repository/Plugin/Blame/Line.pm",
-         "version" : "v1.0.2"
+         "version" : "v1.0.3"
       }
    },
    "release_status" : "stable",
@@ -60,5 +60,5 @@
          "url" : "https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame"
       }
    },
-   "version" : "v1.0.2"
+   "version" : "v1.0.3"
 }
