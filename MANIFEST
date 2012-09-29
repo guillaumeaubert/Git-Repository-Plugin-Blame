@@ -1,6 +1,7 @@
 .perlcriticrc
 Build.PL
 Changes
+LICENSE
 MANIFEST
 MANIFEST.SKIP
 META.json
