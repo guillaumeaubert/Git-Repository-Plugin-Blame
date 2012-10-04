@@ -23,10 +23,10 @@ name: Git-Repository-Plugin-Blame
 provides:
   Git::Repository::Plugin::Blame:
     file: lib/Git/Repository/Plugin/Blame.pm
-    version: v1.0.3
+    version: v1.0.4
   Git::Repository::Plugin::Blame::Line:
     file: lib/Git/Repository/Plugin/Blame/Line.pm
-    version: v1.0.3
+    version: v1.0.4
 requires:
   perl: 5.006
 resources:
@@ -34,4 +34,4 @@ resources:
   homepage: https://metacpan.org/release/Git-Repository-Plugin-Blame
   license: http://www.gnu.org/licenses/gpl-3.0.txt
   repository: https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame
-version: v1.0.3
+version: v1.0.4

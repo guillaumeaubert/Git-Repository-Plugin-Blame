@@ -1,5 +1,8 @@
 Revision history for Git-Repository-Plugin-Blame.
 
+v1.0.4  10/03/2012
+        * Relicensed as GPLv3.
+
 v1.0.3  05/24/2012
         * Updated .perlcriticrc to use only core policies.
         * Updated bug tracker information in POD.
