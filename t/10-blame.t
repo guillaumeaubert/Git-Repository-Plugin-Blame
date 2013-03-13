@@ -25,6 +25,12 @@ ok(
 	'Find the work tree for the temporary test repository.',
 );
 
+# Set up the default author.
+$ENV{'GIT_AUTHOR_NAME'} = 'Author1';
+$ENV{'GIT_AUTHOR_EMAIL'} = 'author1@example.com';
+$ENV{'GIT_COMMITTER_NAME'} = 'Author1';
+$ENV{'GIT_COMMITTER_EMAIL'} = 'author1@example.com';
+
 # Create a new file.
 my $test_file = $work_tree . '/README';
 ok(
