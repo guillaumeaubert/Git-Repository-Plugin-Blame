@@ -9,6 +9,7 @@ META.json
 META.yml
 Makefile.PL
 README
+examples/examples.txt
 ignore.txt
 lib/Git/Repository/Plugin/Blame.pm
 lib/Git/Repository/Plugin/Blame/Line.pm
