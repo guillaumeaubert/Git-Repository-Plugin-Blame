@@ -212,9 +212,9 @@ You can also look for information at:
 
 =over 4
 
-=item * RT: CPAN's request tracker
+=item * GitHub (report bugs there)
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Git-Repository-Plugin-Blame>
+L<https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame/issues>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
