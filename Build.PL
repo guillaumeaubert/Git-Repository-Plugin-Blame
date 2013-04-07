@@ -44,6 +44,7 @@ my $builder = $class->new(
 		'Data::Dumper'            => 0,
 		'Test::Deep'              => 0,
 		'Test::Exception'         => 0,
+		'Test::FailWarnings'      => 0,
 		'Test::Git'               => 0,
 		'Test::More'              => 0,
 	},
