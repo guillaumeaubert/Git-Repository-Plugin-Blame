@@ -5,10 +5,12 @@
 use strict;
 use warnings;
 
+use Git::Repository ( 'Blame', 'Log' );
 use Test::Exception;
+use Test::FailWarnings -allow_deps => 1;
 use Test::Git;
 use Test::More;
-use Git::Repository ( 'Blame', 'Log' );
+
 
 # Check there is a git binary available, or skip all.
 has_git();
