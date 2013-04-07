@@ -11,9 +11,6 @@ my $builder = Module::Build->new(
 	build_requires       =>
 	{
 		'Data::Dumper'            => 0,
-		'Carp'                    => 0,
-		'Git::Repository'         => 1.20,
-		'Perl6::Slurp'            => 0,
 		'Test::Deep'              => 0,
 		'Test::Exception'         => 0,
 		'Test::Git'               => 0,
@@ -21,6 +18,9 @@ my $builder = Module::Build->new(
 	},
 	requires             =>
 	{
+		'Carp'                    => 0,
+		'Git::Repository'         => 1.20,
+		'Perl6::Slurp'            => 0,
 		'perl' => 5.006,
 	},
 	add_to_cleanup       =>

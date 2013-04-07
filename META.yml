@@ -3,10 +3,7 @@ abstract: 'Add a blame() method to L<Git::Repository>.'
 author:
   - 'Guillaume Aubert <aubertg@cpan.org>'
 build_requires:
-  Carp: 0
   Data::Dumper: 0
-  Git::Repository: 1.2
-  Perl6::Slurp: 0
   Test::Deep: 0
   Test::Exception: 0
   Test::Git: 0
@@ -28,6 +25,9 @@ provides:
     file: lib/Git/Repository/Plugin/Blame/Line.pm
     version: v1.0.4
 requires:
+  Carp: 0
+  Git::Repository: 1.2
+  Perl6::Slurp: 0
   perl: 5.006
 resources:
   bugtracker: https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame/issues
