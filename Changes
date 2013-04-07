@@ -1,20 +1,20 @@
 Revision history for Git-Repository-Plugin-Blame.
 
-v1.0.4  10/03/2012
+v1.0.4  2012-10-03
         * Relicensed as GPLv3.
 
-v1.0.3  05/24/2012
+v1.0.3  2012-05-24
         * Updated .perlcriticrc to use only core policies.
         * Updated bug tracker information in POD.
         * Added meta information.
 
-v1.0.2  02/04/2012
+v1.0.2  2012-02-04
         * Updated dependencies to require Git::Repository v1.20, to support
           changes introduced in v1.0.1.
 
-v1.0.1  02/04/2012
+v1.0.1  2012-02-04
         * Fixed problem when git blame output was too large and caused the
           module to hang.
 
-v1.0.0  01/29/2012
+v1.0.0  2012-01-29
         * First public version.
