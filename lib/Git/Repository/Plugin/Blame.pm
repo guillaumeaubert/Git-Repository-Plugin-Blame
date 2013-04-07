@@ -136,9 +136,9 @@ L<http://annocpan.org/dist/Git-Repository-Plugin-Blame>
 
 L<http://cpanratings.perl.org/d/Git-Repository-Plugin-Blame>
 
-=item * Search CPAN
+=item * MetaCPAN
 
-L<http://search.cpan.org/dist/Git-Repository-Plugin-Blame/>
+L<https://metacpan.org/release/Git-Repository-Plugin-Blame>
 
 =back
 
