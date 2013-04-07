@@ -1,5 +1,17 @@
 Revision history for Git-Repository-Plugin-Blame.
 
+v1.0.5  2013-04-07
+        * Added Test::FailWarnings to all tests.
+        * Reported Search CPAN links to MetaCPAN.
+        * Moved to using GitHub's issues instead of RT, updated links.
+        * Moved release tests to xt/, added new release tests.
+        * Added handling of release tests to Build.PL.
+        * Added examples/ and info on how to contribute to this directory.
+        * Fixed prerequisites.
+        * Fixed dates in Changes, to use international format.
+        * Added configuration file to tie into Travis-CI for continuous
+          integration.
+
 v1.0.4  2012-10-03
         * Relicensed as GPLv3.
 
