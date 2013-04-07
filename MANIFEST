@@ -28,3 +28,4 @@ xt/module_versions.t
 xt/perlcritic.t
 xt/pod-coverage.t
 xt/pod.t
+xt/unix_eol.t
