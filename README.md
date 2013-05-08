@@ -1,8 +1,13 @@
 Git-Repository-Plugin-Blame
+===========================
+
+[![Build Status](https://travis-ci.org/guillaumeaubert/Git-Repository-Plugin-Blame.png?branch=master)](https://travis-ci.org/guillaumeaubert/Git-Repository-Plugin-Blame)
 
 Bond git and Perl::Critic to blame the right people for violations.
 
+
 INSTALLATION
+------------
 
 To install this module, run the following commands:
 
@@ -11,29 +16,33 @@ To install this module, run the following commands:
 	./Build test
 	./Build install
 
+
 SUPPORT AND DOCUMENTATION
+-------------------------
 
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc Git::Repository::Plugin::Blame
+	perldoc Git::Repository::Plugin::Blame
+
 
 You can also look for information at:
 
-    GitHub (report bugs here)
-        https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame/issues
+ * [GitHub (report bugs here)]
+   (https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame/issues)
 
-    AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/Git-Repository-Plugin-Blame
+ * [AnnoCPAN, Annotated CPAN documentation]
+   (http://annocpan.org/dist/Git-Repository-Plugin-Blame)
 
-    CPAN Ratings
-        http://cpanratings.perl.org/d/Git-Repository-Plugin-Blame
+ * [CPAN Ratings]
+   (http://cpanratings.perl.org/d/Git-Repository-Plugin-Blame)
 
-    MetaCPAN
-        https://metacpan.org/release/Git-Repository-Plugin-Blame
+ * [MetaCPAN]
+   (https://metacpan.org/release/Git-Repository-Plugin-Blame)
 
 
 LICENSE AND COPYRIGHT
+---------------------
 
 Copyright (C) 2012-2013 Guillaume Aubert
 
