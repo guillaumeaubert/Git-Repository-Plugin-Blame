@@ -100,11 +100,6 @@ sub blame
 }
 
 
-=head1 AUTHOR
-
-Guillaume Aubert, C<< <aubertg at cpan.org> >>.
-
-
 =head1 BUGS
 
 Please report any bugs or feature requests through the web interface at
@@ -141,6 +136,12 @@ L<http://cpanratings.perl.org/d/Git-Repository-Plugin-Blame>
 L<https://metacpan.org/release/Git-Repository-Plugin-Blame>
 
 =back
+
+
+=head1 AUTHOR
+
+L<Guillaume Aubert|https://metacpan.org/author/AUBERTG>,
+C<< <aubertg at cpan.org> >>.
 
 
 =head1 COPYRIGHT & LICENSE
