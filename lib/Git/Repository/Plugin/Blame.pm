@@ -14,7 +14,7 @@ use Git::Repository::Plugin::Blame::Line;
 
 
 =head1 NAME
- 
+
 Git::Repository::Plugin::Blame - Add a blame() method to L<Git::Repository>.
 
 
