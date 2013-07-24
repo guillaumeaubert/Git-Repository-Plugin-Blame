@@ -10,6 +10,7 @@ use Test::Exception;
 use Test::FailWarnings -allow_deps => 1;
 use Test::Git;
 use Test::More;
+use Test::Type;
 
 
 # Check there is a git binary available, or skip all.
@@ -106,10 +107,9 @@ lives_ok(
 	'Retrieve git blame information.',
 );
 
-isa_ok(
+ok_arrayref(
 	$blame_lines,
-	'ARRAY',
-	'Blame information',
+	name => 'Blame information',
 );
 
 is(
