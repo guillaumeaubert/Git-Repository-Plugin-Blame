@@ -53,7 +53,7 @@ my $builder = $class->new(
 		'Carp'                    => 0,
 		'Git::Repository'         => 1.20,
 		'Perl6::Slurp'            => 0,
-		'perl' => 5.006,
+		'perl'                    => 5.006,
 	},
 	add_to_cleanup       =>
 	[
