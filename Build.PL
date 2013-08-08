@@ -52,6 +52,8 @@ my $builder = $class->new(
 	requires             =>
 	{
 		'Carp'                    => 0,
+		'Class::Load'             => 0,
+		'Data::Validate::Type'    => 0,
 		'Git::Repository'         => 1.20,
 		'Perl6::Slurp'            => 0,
 		'perl'                    => 5.006,
