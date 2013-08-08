@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Carp;
+use Data::Validate::Type;
 
 
 =head1 NAME
@@ -146,6 +147,52 @@ sub get_blame_lines
 		if !defined( $file ) || ( $file eq '' );
 	
 	return $self->{'files'}->{ $file };
+}
+
+
+=head2 set_blame_lines()
+
+Store in the cache the output of C<git blame> for a given file.
+
+	$cache->set_blame_lines(
+		file        => $file,
+		blame_lines => $blame_lines,
+	);
+
+Arguments:
+
+=over 4
+
+=item * file (mandatory)
+
+The file for which you are caching the C<git blame> output.
+
+=item * blame_lines (mandatory)
+
+The output of C<Git::Repository::Plugin::Blame->blame()>.
+
+=back
+
+=cut
+
+sub set_blame_lines
+{
+	my ( $self, %args ) = @_;
+	my $file = delete( $args{'file'} );
+	my $blame_lines = delete( $args{'blame_lines'} );
+	croak 'The following arguments are not valid: ' . join( ',', keys %args )
+		if scalar( keys %args ) != 0;
+	
+	croak 'The "file" argument is mandatory'
+		if !defined( $file ) || $file eq '';
+	croak 'The "blame_lines" argument is mandatory'
+		if !defined( $blame_lines );
+	croak 'The "blame_lines" argument must be an arrayref'
+		if !Data::Validate::Type::is_arrayref( $blame_lines );
+	
+	$self->{'files'}->{ $file } = $blame_lines;
+	
+	return;
 }
 
 
