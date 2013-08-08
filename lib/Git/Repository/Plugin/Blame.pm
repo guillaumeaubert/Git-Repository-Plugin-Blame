@@ -21,11 +21,11 @@ Git::Repository::Plugin::Blame - Add a blame() method to L<Git::Repository>.
 
 =head1 VERSION
 
-Version 1.0.5
+Version 1.1.0
 
 =cut
 
-our $VERSION = '1.0.5';
+our $VERSION = '1.1.0';
 
 
 =head1 SYNOPSIS

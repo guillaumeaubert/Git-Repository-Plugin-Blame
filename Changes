@@ -1,5 +1,9 @@
 Revision history for Git-Repository-Plugin-Blame.
 
+v1.1.0  2013-08-08
+        * Added optional caching mechanism for blame()'s output.
+				* Cleaned up tests and added Coveralls.io support.
+
 v1.0.5  2013-04-07
         * Added Test::FailWarnings to all tests.
         * Reported Search CPAN links to MetaCPAN.
