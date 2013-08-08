@@ -99,6 +99,22 @@ sub new
 }
 
 
+=head2 get_repository()
+
+Return the unique identifier for the repository.
+
+	my $repository = $cache->get_repository();
+
+=cut
+
+sub get_repository
+{
+	my ( $self ) = @_;
+	
+	return $self->{'repository'};
+}
+
+
 =head1 BUGS
 
 Please report any bugs or feature requests through the web interface at
