@@ -3,6 +3,8 @@ package Git::Repository::Plugin::Blame::Cache;
 use strict;
 use warnings;
 
+use Carp;
+
 
 =head1 NAME
 
@@ -16,6 +18,8 @@ Version 1.0.5
 =cut
 
 our $VERSION = '1.0.5';
+
+my $CACHE = {};
 
 
 =head1 SYNOPSIS
@@ -48,6 +52,51 @@ C<Git::Repository->blame()> by extension.
 
 
 =head1 METHODS
+
+=head2 new()
+
+Return a cache object for the specified repository.
+
+	my $cache = Git::Repository::Plugin::Blame::Cache->new(
+		repository => $repository,
+	);
+
+Arguments:
+
+=over 4
+
+=item * repository (mandatory)
+
+A unique way to identify a repository. Typically, the root path of the
+repository.
+
+=back
+
+=cut
+
+sub new
+{
+	my ( $class, %args ) = @_;
+	my $repository = delete( $args{'repository'} );
+	croak 'The following arguments are not valid: ' . join( ',', keys %args )
+		if scalar( keys %args ) != 0;
+	
+	croak 'The "repository" argument is mandatory'
+		if !defined( $repository ) || $repository eq '';
+	
+	if ( !defined( $CACHE->{ $repository } ) )
+	{
+		$CACHE->{ $repository } = bless(
+			{
+				repository => $repository,
+				files      => {},
+			},
+			$class,
+		);
+	}
+	
+	return $CACHE->{ $repository };
+}
 
 
 =head1 BUGS
