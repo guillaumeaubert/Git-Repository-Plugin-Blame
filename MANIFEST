@@ -12,6 +12,7 @@ README.md
 examples/examples.txt
 ignore.txt
 lib/Git/Repository/Plugin/Blame.pm
+lib/Git/Repository/Plugin/Blame/Cache.pm
 lib/Git/Repository/Plugin/Blame/Line.pm
 t/00-load.t
 t/10-blame.t
