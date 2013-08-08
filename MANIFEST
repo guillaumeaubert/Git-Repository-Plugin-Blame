@@ -18,6 +18,7 @@ t/00-load.t
 t/05-Cache/00-load.t
 t/05-Cache/10-new.t
 t/05-Cache/15-get_repository.t
+t/05-Cache/25-get_blame_lines.t
 t/10-blame.t
 t/Line/00-load.t
 t/Line/10-new.t

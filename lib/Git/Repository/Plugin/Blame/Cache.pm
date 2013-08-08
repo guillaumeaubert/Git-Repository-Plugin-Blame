@@ -115,6 +115,40 @@ sub get_repository
 }
 
 
+=head2 get_blame_lines()
+
+Retrieve git blame lines from the cache (if they exist) for a given file.
+
+	my $blame_lines = $cache->get_blame_lines(
+		file => $file,
+	);
+
+Arguments:
+
+=over 4
+
+=item * file (mandatory)
+
+The file for which you want the cached C<git blame> output.
+
+=back
+
+=cut
+
+sub get_blame_lines
+{
+	my ( $self, %args ) = @_;
+	my $file = delete( $args{'file'} );
+	croak 'The following arguments are not valid: ' . join( ',', keys %args )
+		if scalar( keys %args ) != 0;
+	
+	croak 'The "file" argument is mandatory'
+		if !defined( $file ) || ( $file eq '' );
+	
+	return $self->{'files'}->{ $file };
+}
+
+
 =head1 BUGS
 
 Please report any bugs or feature requests through the web interface at
