@@ -52,7 +52,7 @@ my $builder = $class->new(
 	requires             =>
 	{
 		'Carp'                    => 0,
-		'Class::Load'             => 0,
+		'Class::Load'             => 0.20,  # Required for load_class()'s return value.
 		'Data::Validate::Type'    => 0,
 		'Git::Repository'         => 1.20,
 		'Perl6::Slurp'            => 0,

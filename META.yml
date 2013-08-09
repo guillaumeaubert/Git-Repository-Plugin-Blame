@@ -31,7 +31,7 @@ provides:
     version: v1.1.0
 requires:
   Carp: 0
-  Class::Load: 0
+  Class::Load: 0.2
   Data::Validate::Type: 0
   Git::Repository: 1.2
   Perl6::Slurp: 0

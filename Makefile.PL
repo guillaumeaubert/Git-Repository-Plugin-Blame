@@ -7,7 +7,7 @@ WriteMakefile
           'VERSION_FROM' => 'lib/Git/Repository/Plugin/Blame.pm',
           'PREREQ_PM' => {
                            'Carp' => 0,
-                           'Class::Load' => 0,
+                           'Class::Load' => '0.2',
                            'Data::Dumper' => 0,
                            'Data::Validate::Type' => 0,
                            'Git::Repository' => '1.2',
