@@ -1,5 +1,8 @@
 Revision history for Git-Repository-Plugin-Blame.
 
+v1.2.0  2013-11-15
+        * Added a new dependency due to a split in Git::Repository.
+
 v1.1.1  2013-08-08
         * Required Class::Load v0.20 for load_class() to return the class name.
 
