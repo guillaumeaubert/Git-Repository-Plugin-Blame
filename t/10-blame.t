@@ -149,19 +149,19 @@ subtest(
 				$count,
 				'The line number is correctly set on the object.',
 			);
-			
+
 			my $commit_attributes = $blame_line->get_commit_attributes();
 			ok(
 				defined( $commit_attributes ),
 				'The commit attributes are defined.',
 			);
-			
+
 			is(
 				$blame_line->get_commit_id(),
 				$expected_commit_ids->[ $count - 1 ],
 				'The commit ID reported by git blame is correct.',
 			);
-			
+
 		}
 	}
 );

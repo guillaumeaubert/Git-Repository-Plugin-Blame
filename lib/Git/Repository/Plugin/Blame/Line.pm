@@ -8,7 +8,7 @@ use Carp;
 
 
 =head1 NAME
- 
+
 Git::Repository::Plugin::Blame::Line - Store the git blame information for a line of code.
 
 
@@ -30,7 +30,7 @@ our $VERSION = '1.1.1';
 		commit_attributes => \%commit_attributes,
 		commit_id         => $commit_id,
 	);
-	
+
 	print "The line number is " . $line->get_line_number() . "\n";
 	print "The line is " . $line->get_line() . "\n";
 	print "The commit ID is " . $line->get_commit_id() . "\n";
@@ -86,7 +86,7 @@ The ID of the last commit that modified this line.
 sub new
 {
 	my ( $class, %args ) = @_;
-	
+
 	# Verify parameters.
 	foreach my $arg ( qw( line_number commit_id ) )
 	{
@@ -95,14 +95,14 @@ sub new
 	}
 	croak "The argument 'line' must be defined to create a Git::Repository::Plugin::Blame::Line object"
 		if !defined( $args{'line'} );
-	
+
 	croak "The argument 'line_number' must be a strictly positive integer"
 		if $args{'line_number'} !~ /^\d+$/;
-	
+
 	my $commit_attributes = $args{'commit_attributes'};
 	croak "The argument 'commit_attributes' must be a hashref to create a Git::Repository::Plugin::Blame::Line object"
 		if !defined( $commit_attributes ) || ( ref( $commit_attributes ) ne 'HASH' );
-	
+
 	# Clean emails in commit attributes.
 	foreach my $name ( keys %$commit_attributes )
 	{
@@ -110,7 +110,7 @@ sub new
 		$commit_attributes->{ $name } =~ s/^<//;
 		$commit_attributes->{ $name } =~ s/>$//;
 	}
-	
+
 	# Create and return the object.
 	return bless(
 		{
@@ -135,7 +135,7 @@ Return the number of this line in the file that git blame was applied to.
 sub get_line_number
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'line_number'};
 }
 
@@ -151,7 +151,7 @@ Return the text/code of this line in the file that git blame was applied to.
 sub get_line
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'line'};
 }
 
@@ -167,7 +167,7 @@ Return the SHA-1 of the last commit that modified this line.
 sub get_commit_id
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'commit_id'};
 }
 
@@ -183,7 +183,7 @@ Return the hashref of attributes for the last commit that modified this line.
 sub get_commit_attributes
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'commit_attributes'};
 }
 

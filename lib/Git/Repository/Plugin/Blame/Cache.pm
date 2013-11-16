@@ -26,20 +26,20 @@ my $CACHE = {};
 =head1 SYNOPSIS
 
 	use Git::Repository::Plugin::Blame::Cache;
-	
+
 	# Instantiate the cache for a given repository.
 	my $cache = Git::Repository::Plugin::Blame::Cache->new(
 		repository => $repository,
 	);
-	
+
 	my $repository = $cache->get_repository();
 
-	# Cache blame lines.	
+	# Cache blame lines.
 	$cache->set_blame_lines(
 		file        => $file,
 		blame_lines => $blame_lines,
 	);
-	
+
 	# Retrieve blame lines from the cache.
 	my $blame_lines = $cache->get_blame_lines(
 		file => $file,
@@ -81,10 +81,10 @@ sub new
 	my $repository = delete( $args{'repository'} );
 	croak 'The following arguments are not valid: ' . join( ',', keys %args )
 		if scalar( keys %args ) != 0;
-	
+
 	croak 'The "repository" argument is mandatory'
 		if !defined( $repository ) || $repository eq '';
-	
+
 	if ( !defined( $CACHE->{ $repository } ) )
 	{
 		$CACHE->{ $repository } = bless(
@@ -95,7 +95,7 @@ sub new
 			$class,
 		);
 	}
-	
+
 	return $CACHE->{ $repository };
 }
 
@@ -111,7 +111,7 @@ Return the unique identifier for the repository.
 sub get_repository
 {
 	my ( $self ) = @_;
-	
+
 	return $self->{'repository'};
 }
 
@@ -142,10 +142,10 @@ sub get_blame_lines
 	my $file = delete( $args{'file'} );
 	croak 'The following arguments are not valid: ' . join( ',', keys %args )
 		if scalar( keys %args ) != 0;
-	
+
 	croak 'The "file" argument is mandatory'
 		if !defined( $file ) || ( $file eq '' );
-	
+
 	return $self->{'files'}->{ $file };
 }
 
@@ -182,16 +182,16 @@ sub set_blame_lines
 	my $blame_lines = delete( $args{'blame_lines'} );
 	croak 'The following arguments are not valid: ' . join( ',', keys %args )
 		if scalar( keys %args ) != 0;
-	
+
 	croak 'The "file" argument is mandatory'
 		if !defined( $file ) || $file eq '';
 	croak 'The "blame_lines" argument is mandatory'
 		if !defined( $blame_lines );
 	croak 'The "blame_lines" argument must be an arrayref'
 		if !Data::Validate::Type::is_arrayref( $blame_lines );
-	
+
 	$self->{'files'}->{ $file } = $blame_lines;
-	
+
 	return;
 }
 
