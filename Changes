@@ -1,5 +1,10 @@
 Revision history for Git-Repository-Plugin-Blame.
 
+v1.2.1  2014-04-20
+        - Fixed "package version matches dist version" for CPANTS.
+        - Fixed license declared in meta files.
+        - General cleanup.
+
 v1.2.0  2013-11-15
         - Added a new dependency due to a split in Git::Repository.
 
