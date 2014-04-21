@@ -3,21 +3,21 @@ abstract: 'Add a blame() method to L<Git::Repository>.'
 author:
   - 'Guillaume Aubert <aubertg@cpan.org>'
 build_requires:
-  Data::Dumper: 0
-  Test::Deep: 0
-  Test::Exception: 0
-  Test::FailWarnings: 0
-  Test::Git: 0
-  Test::More: 0
-  Test::Type: 0
+  Data::Dumper: '0'
+  Test::Deep: '0'
+  Test::Exception: '0'
+  Test::FailWarnings: '0'
+  Test::Git: '0'
+  Test::More: '0'
+  Test::Type: '0'
 configure_requires:
-  Module::Build: 0
+  Module::Build: '0'
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4007, CPAN::Meta::Converter version 2.132830'
-license: open_source
+generated_by: 'Module::Build version 0.4205, CPAN::Meta::Converter version 2.140640'
+license: gpl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Git-Repository-Plugin-Blame
 provides:
   Git::Repository::Plugin::Blame:
@@ -30,13 +30,13 @@ provides:
     file: lib/Git/Repository/Plugin/Blame/Line.pm
     version: v1.2.0
 requires:
-  Carp: 0
-  Class::Load: 0.2
-  Data::Validate::Type: 0
-  Git::Repository: 1.2
-  Git::Repository::Plugin::Log: 0
-  Perl6::Slurp: 0
-  perl: 5.006
+  Carp: '0'
+  Class::Load: '0.2'
+  Data::Validate::Type: '0'
+  Git::Repository: '1.2'
+  Git::Repository::Plugin::Log: '0'
+  Perl6::Slurp: '0'
+  perl: '5.006'
 resources:
   bugtracker: https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame/issues
   homepage: https://metacpan.org/release/Git-Repository-Plugin-Blame
