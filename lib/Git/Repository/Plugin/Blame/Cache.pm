@@ -14,11 +14,11 @@ Git::Repository::Plugin::Blame::Cache - Cache the output of C<Git::Repository->b
 
 =head1 VERSION
 
-Version 1.2.1
+Version 1.2.2
 
 =cut
 
-our $VERSION = '1.2.1';
+our $VERSION = '1.2.2';
 
 my $CACHE = {};
 
