@@ -16,7 +16,7 @@ use Test::Type;
 
 
 # Check there is a git binary available, or skip all.
-has_git();
+has_git( '1.5.0' );
 
 plan( tests => 18 );
 
