@@ -9,7 +9,7 @@ use Data::Validate::Type;
 
 =head1 NAME
 
-Git::Repository::Plugin::Blame::Cache - Cache the output of C<Git::Repository->blame()>.
+Git::Repository::Plugin::Blame::Cache - Cache the output of C<< Git::Repository->blame() >>.
 
 
 =head1 VERSION
@@ -48,8 +48,8 @@ my $CACHE = {};
 
 =head1 DESCRIPTION
 
-Cache the output of L<Git::Repository::Plugin::Blame->blame()> and
-C<Git::Repository->blame()> by extension.
+Cache the output of C<< Git::Repository::Plugin::Blame->blame() >> and
+C<< Git::Repository->blame() >> by extension.
 
 
 =head1 METHODS
@@ -169,7 +169,7 @@ The file for which you are caching the C<git blame> output.
 
 =item * blame_lines (mandatory)
 
-The output of C<Git::Repository::Plugin::Blame->blame()>.
+The output of C<< Git::Repository::Plugin::Blame->blame() >>.
 
 =back
 
