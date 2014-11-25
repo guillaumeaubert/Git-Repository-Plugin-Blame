@@ -3,28 +3,28 @@ require 5.006;
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
+  'test' => {
+              'TESTS' => 't/*.t t/Line/*.t t/05-Cache/*.t'
+            },
+  'PL_FILES' => {},
+  'INSTALLDIRS' => 'site',
   'NAME' => 'Git::Repository::Plugin::Blame',
+  'EXE_FILES' => [],
   'VERSION_FROM' => 'lib/Git/Repository/Plugin/Blame.pm',
   'PREREQ_PM' => {
-                   'Carp' => 0,
-                   'Class::Load' => '0.2',
-                   'Data::Dumper' => 0,
-                   'Data::Validate::Type' => 0,
-                   'Git::Repository' => '1.2',
-                   'Git::Repository::Plugin::Log' => 0,
                    'Perl6::Slurp' => 0,
-                   'Test::Deep' => 0,
+                   'Test::Git' => 0,
                    'Test::Exception' => 0,
                    'Test::FailWarnings' => 0,
-                   'Test::Git' => 0,
+                   'Data::Dumper' => 0,
+                   'Class::Load' => '0.2',
+                   'Carp' => 0,
                    'Test::More' => 0,
-                   'Test::Type' => 0
-                 },
-  'INSTALLDIRS' => 'site',
-  'EXE_FILES' => [],
-  'PL_FILES' => {},
-  'test' => {
-              'TESTS' => 't/*.t t/05-Cache/*.t t/Line/*.t'
-            }
+                   'Git::Repository::Plugin::Log' => 0,
+                   'Git::Repository' => '1.2',
+                   'Test::Type' => 0,
+                   'Data::Validate::Type' => 0,
+                   'Test::Deep' => 0
+                 }
 )
 ;
