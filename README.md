@@ -1,8 +1,8 @@
 Git-Repository-Plugin-Blame
 ===========================
 
-[![Build Status](https://travis-ci.org/guillaumeaubert/Git-Repository-Plugin-Blame.png?branch=master)](https://travis-ci.org/guillaumeaubert/Git-Repository-Plugin-Blame)
-[![Coverage Status](https://coveralls.io/repos/guillaumeaubert/Git-Repository-Plugin-Blame/badge.png?branch=master)](https://coveralls.io/r/guillaumeaubert/Git-Repository-Plugin-Blame?branch=master)
+[![Build Status](https://travis-ci.org/guillaumeaubert/Git-Repository-Plugin-Blame.svg?branch=master)](https://travis-ci.org/guillaumeaubert/Git-Repository-Plugin-Blame)
+[![Coverage Status](https://coveralls.io/repos/guillaumeaubert/Git-Repository-Plugin-Blame/badge.svg?branch=master)](https://coveralls.io/r/guillaumeaubert/Git-Repository-Plugin-Blame?branch=master)
 
 Bond git and Perl::Critic to blame the right people for violations.
 
