@@ -73,6 +73,7 @@ sub blame
 {
 	my ( $repository, $file, %args ) = @_;
 	my $use_cache = delete( $args{'use_cache'} ) || 0;
+	my $ignore_whitespace = delete( $args{'ignore_whitespace'} ) || 0;
 	croak 'The following arguments are not valid: ' . join( ', ' , keys %args )
 		if scalar( keys %args ) != 0;
 
@@ -91,7 +92,11 @@ sub blame
 	}
 
 	# Run the command.
-	my $command = $repository->command( 'blame', '--porcelain', $file );
+	my @commandline_options = ( '--porcelain' );
+	if ($ignore_whitespace) {
+		push @commandline_options, '-w';
+	}
+	my $command = $repository->command( 'blame', @commandline_options, $file );
 	my @output = $command->final_output();
 
 	# Parse the output.
