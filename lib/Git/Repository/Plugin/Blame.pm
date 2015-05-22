@@ -93,9 +93,7 @@ sub blame
 
 	# Run the command.
 	my @commandline_options = ( '--porcelain' );
-	if ($ignore_whitespace) {
-		push @commandline_options, '-w';
-	}
+	push( @commandline_options, '-w' ) if $ignore_whitespace;
 	my $command = $repository->command( 'blame', @commandline_options, $file );
 	my @output = $command->final_output();
 
