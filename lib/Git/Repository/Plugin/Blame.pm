@@ -65,6 +65,11 @@ Arguments:
 
 Cache the git blame output.
 
+=item * ignore_whitespace I<(default: 0)>
+
+Ignore whitespace when comparing the parent's version and the child's to find
+where the lines came from.
+
 =back
 
 =cut
