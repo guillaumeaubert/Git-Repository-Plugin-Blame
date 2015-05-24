@@ -1,5 +1,9 @@
 Revision history for Git-Repository-Plugin-Blame.
 
+v1.3.0  2015-05-24
+        - Added 'ignore_whitespace' option to blame(). Thank you, Dominic
+          Sonntag!
+
 v1.2.3  2014-11-24
         - Fixed POD (GH-6). Thank you, Сергей Романов!
 
