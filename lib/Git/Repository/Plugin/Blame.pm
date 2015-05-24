@@ -61,7 +61,7 @@ Arguments:
 
 =over 4
 
-=item * use_cache (default: 0)
+=item * use_cache I<(default: 0)>
 
 Cache the git blame output.
 
