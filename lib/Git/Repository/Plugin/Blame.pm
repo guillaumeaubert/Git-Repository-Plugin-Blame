@@ -61,9 +61,14 @@ Arguments:
 
 =over 4
 
-=item * use_cache (default: 0)
+=item * use_cache I<(default: 0)>
 
 Cache the git blame output.
+
+=item * ignore_whitespace I<(default: 0)>
+
+Ignore whitespace when comparing the parent's version and the child's to find
+where the lines came from.
 
 =back
 
@@ -73,6 +78,7 @@ sub blame
 {
 	my ( $repository, $file, %args ) = @_;
 	my $use_cache = delete( $args{'use_cache'} ) || 0;
+	my $ignore_whitespace = delete( $args{'ignore_whitespace'} ) || 0;
 	croak 'The following arguments are not valid: ' . join( ', ' , keys %args )
 		if scalar( keys %args ) != 0;
 
@@ -81,7 +87,13 @@ sub blame
 	if ( $use_cache )
 	{
 		my $class = Class::Load::load_class( 'Git::Repository::Plugin::Blame::Cache' );
-		$cache = $class->new( repository => $repository->work_tree() );
+		$cache = $class->new(
+			repository => $repository->work_tree(),
+			blame_args =>
+			{
+				ignore_whitespace => $ignore_whitespace,
+			},
+		);
 		croak 'Failed to initialize cache for repository ' . $repository->work_tree()
 			if !defined( $cache );
 
@@ -91,7 +103,9 @@ sub blame
 	}
 
 	# Run the command.
-	my $command = $repository->command( 'blame', '--porcelain', $file );
+	my @commandline_options = ( '--porcelain' );
+	push( @commandline_options, '-w' ) if $ignore_whitespace;
+	my $command = $repository->command( 'blame', @commandline_options, $file );
 	my @output = $command->final_output();
 
 	# Parse the output.
