@@ -82,7 +82,13 @@ sub blame
 	if ( $use_cache )
 	{
 		my $class = Class::Load::load_class( 'Git::Repository::Plugin::Blame::Cache' );
-		$cache = $class->new( repository => $repository->work_tree() );
+		$cache = $class->new(
+			repository => $repository->work_tree(),
+			blame_args =>
+			{
+				ignore_whitespace => $ignore_whitespace,
+			},
+		);
 		croak 'Failed to initialize cache for repository ' . $repository->work_tree()
 			if !defined( $cache );
 

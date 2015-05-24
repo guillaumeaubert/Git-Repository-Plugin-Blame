@@ -60,16 +60,23 @@ Return a cache object for the specified repository.
 
 	my $cache = Git::Repository::Plugin::Blame::Cache->new(
 		repository => $repository,
+		options    => $options,
 	);
 
 Arguments:
 
 =over 4
 
-=item * repository (mandatory)
+=item * repository I<(mandatory)>
 
 A unique way to identify a repository. Typically, the root path of the
 repository.
+
+=item * blame_args I<(optional)>
+
+A hashref of arguments used to generate the C<git blame> output, if applicable.
+This avoids caching the same output for C<git blame> and C<git blame -w>, for
+example.
 
 =back
 
@@ -79,24 +86,45 @@ sub new
 {
 	my ( $class, %args ) = @_;
 	my $repository = delete( $args{'repository'} );
+	my $blame_args = delete( $args{'blame_args'} ) || {};
 	croak 'The following arguments are not valid: ' . join( ',', keys %args )
 		if scalar( keys %args ) != 0;
 
+	# Verify mandatory arguments.
 	croak 'The "repository" argument is mandatory'
 		if !defined( $repository ) || $repository eq '';
 
-	if ( !defined( $CACHE->{ $repository } ) )
+	# Serialize the options passed, to hold a separate cache entry for each set
+	# of options.
+	my $serialized_blame_args = '';
+	if ( scalar( keys %$blame_args ) != 0 )
 	{
-		$CACHE->{ $repository } = bless(
+		my @blame_args = ();
+		foreach my $blame_arg ( sort keys %$blame_args )
+		{
+			my $value = defined( $blame_args->{ $blame_arg } )
+				? $blame_args->{ $blame_arg }
+				: '';
+			push( @blame_args, "$blame_arg=$value" );
+		}
+		$serialized_blame_args = join( ',', @blame_args );
+	}
+
+	# If the cache element does not exist, create it.
+	if ( !defined( $CACHE->{ $repository }->{ $serialized_blame_args } ) )
+	{
+		$CACHE->{ $repository }->{ $serialized_blame_args } = bless(
 			{
-				repository => $repository,
-				files      => {},
+				repository            => $repository,
+				files                 => {},
+				serialized_blame_args => $serialized_blame_args,
 			},
 			$class,
 		);
 	}
 
-	return $CACHE->{ $repository };
+	# Return the corresponding cache element.
+	return $CACHE->{ $repository }->{ $serialized_blame_args };
 }
 
 

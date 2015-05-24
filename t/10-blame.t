@@ -18,7 +18,7 @@ use Test::Type;
 # Check there is a git binary available, or skip all.
 has_git( '1.5.0' );
 
-plan( tests => 18 );
+plan( tests => 16 );
 
 # Create a new, empty repository in a temporary location and return
 # a Git::Repository object.
@@ -166,33 +166,119 @@ subtest(
 	}
 );
 
-# Make sure the cache is empty.
-ok(
-	defined(
-		my $cache = Git::Repository::Plugin::Blame::Cache->new(
-			repository => $repository->work_tree(),
-		)
-	),
-	'Instantiated cache object for the repository.',
-);
-is_deeply(
-	$cache->get_blame_lines( file => $test_file ),
-	undef,
-	"The cache is empty for file '$test_file'.",
-) || diag( explain( $cache ) );
+subtest(
+	'Verify caching without arguments passed.',
+	sub
+	{
+		plan( tests => 6 );
 
-# Call blame() again with cache enabled, which should populate the cache.
-ok(
-	$repository->blame(
-		$test_file,
-		use_cache => 1,
-	),
-	'Call blame() with cache enabled.',
+		# Make sure the cache is empty.
+		ok(
+			defined(
+				my $cache = Git::Repository::Plugin::Blame::Cache->new(
+					repository => $repository->work_tree(),
+					blame_args =>
+					{
+						ignore_whitespace => 0,
+					}
+				)
+			),
+			'Instantiated cache object for the repository.',
+		);
+		ok(
+			!defined(
+				$cache->get_blame_lines( file => $test_file )
+			),
+			"The cache is empty for file '$test_file'.",
+		) || diag( 'Cache: ', explain( $cache ) );
+
+		# Call blame() again with cache enabled, which should populate the cache.
+		ok(
+			$repository->blame(
+				$test_file,
+				use_cache => 1,
+			),
+			'Call blame() with cache enabled.',
+		);
+
+		# Make sure the cache was populated.
+		my $cached_blame_lines;
+		ok(
+			defined(
+				$cached_blame_lines = $cache->get_blame_lines( file => $test_file )
+			),
+			"The cache is not empty for file '$test_file'.",
+		) || diag( 'Cached blame lines: ', explain( $cached_blame_lines ) );
+		is_deeply(
+			$cached_blame_lines,
+			$blame_lines,
+			"The cached blame lines for file '$test_file' match the non-cached version.",
+		) || diag( 'Cached: ', explain( $cached_blame_lines ), "\n", 'Non-cached: ', explain( $blame_lines ) );
+
+		# Make sure the serialization worked as expected.
+		is(
+			$cache->{'serialized_blame_args'},
+			'ignore_whitespace=0',
+			'The serialization key accounts for the lack of arguments.',
+		);
+	}
 );
 
-# Make sure the cache was populated.
-is_deeply(
-	$cache->get_blame_lines( file => $test_file ),
-	$blame_lines,
-	"The cached blame lines for file '$test_file' match the non-cached version.",
-) || diag( explain( $cache ) );
+subtest(
+	'Verify caching with arguments passed.',
+	sub
+	{
+		plan( tests => 6 );
+
+		# Make sure the cache is empty.
+		ok(
+			defined(
+				my $cache = Git::Repository::Plugin::Blame::Cache->new(
+					repository => $repository->work_tree(),
+					blame_args =>
+					{
+						ignore_whitespace => 1,
+					}
+				)
+			),
+			'Instantiated cache object for the repository.',
+		);
+		ok(
+			!defined(
+				$cache->get_blame_lines( file => $test_file ),
+			),
+			"The cache is empty for file '$test_file'.",
+		) || diag( explain( $cache ) );
+
+		# Call blame() again with cache enabled, which should populate the cache.
+		ok(
+			$repository->blame(
+				$test_file,
+				use_cache         => 1,
+				ignore_whitespace => 1,
+			),
+			'Call blame() with use_cache=1 and ignore_whitespace=1.',
+		);
+
+		# Make sure the cache was populated.
+		my $cached_blame_lines;
+		ok(
+			defined(
+				$cached_blame_lines = $cache->get_blame_lines( file => $test_file ),
+			),
+			"The cache is not empty for file '$test_file'.",
+		) || diag( 'Cached blame lines: ', explain( $cached_blame_lines ) );
+		is_deeply(
+			$cached_blame_lines,
+			$blame_lines,
+			"The cached blame lines for file '$test_file' match the non-cached version.",
+		) || diag( 'Cached: ', explain( $cached_blame_lines ), "\n", 'Non-cached: ', explain( $blame_lines ) );
+
+		# Make sure the serialization worked as expected.
+		is(
+			$cache->{'serialized_blame_args'},
+			'ignore_whitespace=1',
+			'The serialization key accounts for ignore_whitespace=1.',
+		);
+	}
+);
