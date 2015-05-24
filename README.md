@@ -5,7 +5,7 @@ Git-Repository-Plugin-Blame
 [![Coverage Status](https://coveralls.io/repos/guillaumeaubert/Git-Repository-Plugin-Blame/badge.svg?branch=master)](https://coveralls.io/r/guillaumeaubert/Git-Repository-Plugin-Blame?branch=master)
 [![CPAN](https://img.shields.io/cpan/v/Git-Repository-Plugin-Blame.svg)](https://metacpan.org/release/Git-Repository-Plugin-Blame)
 
-Bond git and Perl::Critic to blame the right people for violations.
+Add a blame() method to Git::Repository.
 
 
 INSTALLATION
