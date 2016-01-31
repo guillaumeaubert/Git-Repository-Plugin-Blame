@@ -270,7 +270,7 @@ C<< <aubertg at cpan.org> >>.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2012-2015 Guillaume Aubert.
+Copyright 2012-2016 Guillaume Aubert.
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License version 3 as published by the Free
