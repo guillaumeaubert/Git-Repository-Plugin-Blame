@@ -4,6 +4,7 @@ Git-Repository-Plugin-Blame
 [![Build Status](https://travis-ci.org/guillaumeaubert/Git-Repository-Plugin-Blame.svg?branch=master)](https://travis-ci.org/guillaumeaubert/Git-Repository-Plugin-Blame)
 [![Coverage Status](https://coveralls.io/repos/guillaumeaubert/Git-Repository-Plugin-Blame/badge.svg?branch=master)](https://coveralls.io/r/guillaumeaubert/Git-Repository-Plugin-Blame?branch=master)
 [![CPAN](https://img.shields.io/cpan/v/Git-Repository-Plugin-Blame.svg)](https://metacpan.org/release/Git-Repository-Plugin-Blame)
+[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 
 Add a blame() method to Git::Repository.
 
