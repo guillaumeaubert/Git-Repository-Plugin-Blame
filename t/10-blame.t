@@ -11,12 +11,13 @@ use Test::Deep;
 use Test::Exception;
 use Test::FailWarnings -allow_deps => 1;
 use Test::Git;
+use Test::Requires::Git;
 use Test::More;
 use Test::Type;
 
 
 # Check there is a git binary available, or skip all.
-has_git( '1.5.0' );
+test_requires_git( '1.5.0' );
 
 plan( tests => 16 );
 
