@@ -15,7 +15,7 @@ configure_requires:
   Module::Build: '0'
 dynamic_config: 1
 generated_by: 'Module::Build version 0.4205, CPAN::Meta::Converter version 2.140640'
-license: gpl
+license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
@@ -41,6 +41,6 @@ requires:
 resources:
   bugtracker: https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame/issues
   homepage: https://metacpan.org/release/Git-Repository-Plugin-Blame
-  license: http://www.gnu.org/licenses/gpl-3.0.txt
+  license: http://dev.perl.org/licenses/
   repository: https://github.com/guillaumeaubert/Git-Repository-Plugin-Blame
 version: v1.3.0
