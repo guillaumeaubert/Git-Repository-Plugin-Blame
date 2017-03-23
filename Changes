@@ -1,5 +1,10 @@
 Revision history for Git-Repository-Plugin-Blame.
 
+v1.4.0  2017-03-21
+        - Relicensed under Perl 5 terms.
+        - Switched to Test::Requires::Git instead of the now obsolete
+          Test::Git::has_git(). Thank you, Philippe Bruhat!
+
 v1.3.0  2015-05-24
         - Added 'ignore_whitespace' option to blame(). Thank you, Dominic
           Sonntag!
